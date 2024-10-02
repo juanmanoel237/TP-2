@@ -1,0 +1,10 @@
+version: '3.8'  # Specify the version of the Docker Compose file format
+
+services:
+  web:
+    image: nginx:latest  # Specify the latest version of NGINX
+    ports:
+      - "80:80"  # Map the host's port 80 to the container's port 80
+    volumes:
+      - ./code:/usr/share/nginx/html  # Mount the local 'code' directory to the NGINX HTML directory
+    restart: unless-stopped  # Automatically restart the container unless it is explicitly stopped
